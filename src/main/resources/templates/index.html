@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MyAiApply - Главная страница</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .nav-links {
+            margin-top: 20px;
+        }
+        .nav-links a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>Добро пожаловать в MyAiApply!</h1>
+<p>Выберите действие:</p>
+
+<div class="nav-links">
+    <a href="/applications/list">Список заявок</a>
+    <a href="/applications/add">Добавить новую заявку</a>
+    <a href="/interview">Подготовка к собеседованию</a>
+    <a href="/api/resume/generate">Сгенерировать резюме</a>
+    <a href="/swagger-ui.html">Документация API</a> <!-- Ссылка на Swagger -->
+</div>
+</body>
+</html>

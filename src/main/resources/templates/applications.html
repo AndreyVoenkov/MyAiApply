@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список заявок</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        p {
+            color: green;
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+<h1>Список заявок</h1>
+
+<!-- Сообщение об успешном добавлении заявки -->
+<p th:if="${message}" th:text="${message}"></p>
+
+<!-- Таблица со списком заявок -->
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Вакансия</th>
+        <th>Компания</th>
+        <th>Статус</th>
+        <th>Прогресс</th>
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Перебор списка заявок с использованием новой переменной "app" -->
+    <tr th:each="app : ${applications}">
+        <td th:text="${app.id}"></td>
+        <td th:text="${app.jobTitle}"></td>
+        <td th:text="${app.company}"></td>
+        <td th:text="${app.status}"></td>
+        <td th:text="${app.progress}"></td>
+        <td>
+            <!-- Ссылка для редактирования заявки -->
+            <a th:href="@{/applications/edit/{id}(id=${app.id})}">Редактировать</a>
+            <!-- Форма для удаления заявки -->
+            <form th:action="@{/applications/delete/{id}(id=${app.id})}" method="post" style="display:inline;">
+                <button type="submit">Удалить</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Ссылка для добавления новой заявки -->
+<a href="/applications/add">Добавить новую заявку</a>
+
+<!-- Ссылка для возврата на главную страницу -->
+<a href="/">Вернуться на главную</a>
+</body>
+</html>

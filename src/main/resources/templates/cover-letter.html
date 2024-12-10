@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Сопроводительное письмо</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      white-space: pre-wrap; /* Сохраняет форматирование текста */
+    }
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<h1>Сопроводительное письмо</h1>
+
+<!-- Отображение сопроводительного письма -->
+<p th:text="${coverLetter}"></p>
+
+<!-- Ссылка для возврата к списку заявок -->
+<a href="/applications/list">Вернуться к списку заявок</a>
+
+<!-- Ссылка для возврата на главную страницу -->
+<a href="/">Вернуться на главную</a>
+</body>
+</html>

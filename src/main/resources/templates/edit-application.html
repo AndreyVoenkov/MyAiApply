@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактировать заявку</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+<h1>Редактировать заявку</h1>
+
+<!-- Форма для редактирования заявки -->
+<form th:action="@{/applications/edit/{id}(id=${application.id})}" method="post">
+    <label for="jobTitle">Вакансия:</label>
+    <input type="text" id="jobTitle" name="jobTitle" th:value="${application.jobTitle}" required>
+
+    <label for="company">Компания:</label>
+    <input type="text" id="company" name="company" th:value="${application.company}" required>
+
+    <label for="status">Статус:</label>
+    <input type="text" id="status" name="status" th:value="${application.status}" required>
+
+    <button type="submit">Сохранить</button>
+</form>
+
+<!-- Ссылка для возврата к списку заявок -->
+<a href="/applications/list">Вернуться к списку заявок</a>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Подготовка к собеседованию</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Подготовка к собеседованию</h1>
+
+<form action="/interview/ask" method="post">
+    <label for="question">Задайте технический вопрос:</label>
+    <input type="text" id="question" name="question" required>
+    <button type="submit">Получить ответ</button>
+</form>
+
+<!-- Ссылка для возврата на главную страницу -->
+<a href="/">Вернуться на главную</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавить заявку</title>
+</head>
+<body>
+<h1>Добавить заявку</h1>
+<form action="/applications/add" method="post">
+    <label for="jobTitle">Вакансия:</label>
+    <input type="text" id="jobTitle" name="jobTitle" required><br>
+
+    <label for="company">Компания:</label>
+    <input type="text" id="company" name="company" required><br>
+
+    <label for="status">Статус:</label>
+    <input type="text" id="status" name="status" required><br>
+
+    <button type="submit">Добавить</button>
+</form>
+</body>
+</html>

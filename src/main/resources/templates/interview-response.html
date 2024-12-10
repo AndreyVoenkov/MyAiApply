@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ответ на технический вопрос</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            white-space: pre-wrap;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>Ответ на технический вопрос</h1>
+
+<p><strong>Вопрос:</strong> <span th:text="${question}"></span></p>
+<p><strong>Ответ:</strong> <span th:text="${answer}"></span></p>
+
+<!-- Ссылка для возврата к подготовке к собеседованию -->
+<a href="/interview">Задать ещё вопрос</a>
+
+<!-- Ссылка для возврата на главную страницу -->
+<a href="/">Вернуться на главную</a>
+</body>
+</html>
